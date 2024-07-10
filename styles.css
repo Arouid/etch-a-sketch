@@ -1,36 +1,31 @@
 /* outer wrappers */
 body {
-    text-align: center;
+  text-align: center;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-div {
-    /* border: 2px solid black; */
-    /* padding: 0px; */
-}
-
-header { 
-    padding: 1rem 2rem 4rem;
+/* main area */
+header {
+  padding: 1rem 2rem 4rem;
 }
 
 .container {
-    display: flexbox;
-    margin: 0 auto;
-    width:800px;
-    height: 800px;
-    /* display: flexbox; */
+  display: flexbox;
+  margin: 0 auto;
+  width: 800px;
+  height: 800px;
 }
 
 /* flexbox */
 
 .row {
-    display: flex;
+  display: flex;
 }
 .column {
-    flex: 1;
-    padding: 1rem 0;
-    background-color: lightgray;
+  flex: 1;
+  padding: 1rem 0;
+  background-color: lightgray;
 }
+/* Animations and board styling */
