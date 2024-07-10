@@ -33,3 +33,11 @@ for (let k = 0; k < 16; k++) {
     column.className = "column";
   }
 }
+// Event listeners and hover effect
+
+const cells = document.querySelectorAll(".column");
+cells.forEach((cell) => {
+  cell.addEventListener("mouseover", () => {
+    cell.style.backgroundColor = "#000";
+  });
+});
