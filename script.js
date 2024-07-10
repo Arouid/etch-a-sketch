@@ -1,43 +1,38 @@
-// grid wrapper
+// row and column put into an array. Saving for legacy
+// ******************************************
+// const rowarray = []; // holds 16 row divs
+// for (i = 0; i < 16; i++) {
+//   const row = document.createElement("div");
+//   rowarray.push(row)};
+// ******************************************
+// const columnarray = []; // hold the 256 columns
+// for (i = 0; i < 16 * 16; i++) {
+//   const column = document.createElement("div");
+//   columnarray.push(column)};
 
-const container = document.createElement("div");
-container.id = "flexGrid";
-container.className = "container";
-document.body.append(container);
+// the main event, hopefully modular!
 
-// row code
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.createElement("div");
+  container.id = "flexGrid";
+  container.className = "container";
+  document.body.append(container);
 
-const rowarray = []; // holds 16 row divs
-for (i = 0; i < 16; i++) {
-  const row = document.createElement("div");
-  rowarray.push(row);
-}
-// column code
+  for (let k = 0; k < 16; k++) {
+    const row = document.createElement("div");
+    row.className = "row";
+    container.append(row);
 
-const columnarray = []; // hold the 256 columns
-for (i = 0; i < 16 * 16; i++) {
-  const column = document.createElement("div");
-  columnarray.push(column);
-}
+    for (let i = 0; i < 16; i++) {
+      const column = document.createElement("div");
+      column.className = "column";
+      row.append(column);
 
-// Build the 16x16 grid dynamically
-
-for (let k = 0; k < 16; k++) {
-  rows = rowarray.pop();
-  container.append(rows);
-  rows.className = "row";
-
-  for (let i = 0; i < 16; i++) {
-    column = columnarray.pop();
-    rows.append(column);
-    column.className = "column";
+      column.addEventListener("mouseover", () => {
+        column.style.backgroundColor = "#000";
+      });
+    }
   }
-}
-// Event listeners and hover effect
-
-const cells = document.querySelectorAll(".column");
-cells.forEach((cell) => {
-  cell.addEventListener("mouseover", () => {
-    cell.style.backgroundColor = "#000";
-  });
 });
+
+// refactored code and stuck it all in the top layer function
