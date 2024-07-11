@@ -17,15 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to create the 16x16 grid
   function createGrid(size) {
-    container.innerHTML = ""; // Clear existing grid
+    container.innerHTML = "";
+    const cellSize = 800 / size; // changes grid window size
+
     for (let k = 0; k < size; k++) {
       const row = document.createElement("div");
       row.className = "row";
+      row.style.width = `${cellSize}px`;
+      row.style.height = `${cellSize}px`;
       container.append(row);
 
       for (let i = 0; i < size; i++) {
         const column = document.createElement("div");
         column.className = "column";
+        column.style.width = `${cellSize}px`;
+        column.style.height = `${cellSize}px`;
         row.append(column);
 
         // Add hover effect
