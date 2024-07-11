@@ -10,15 +10,18 @@
 //   const column = document.createElement("div");
 //   columnarray.push(column)};
 
-// the main event, hopefully modular!
+// the main event
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
 
   // Function to create the 16x16 grid
   function createGrid(size) {
-    container.innerHTML = "";
+    container.innerHTML = ""; // clear function
+
     const cellSize = 800 / size; // changes grid window size
+    let cSize = cellSize * size;
+    container.style.height = `${cSize}px`;
 
     for (let k = 0; k < size; k++) {
       const row = document.createElement("div");
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.querySelector("#resetBtn");
   resetButton.addEventListener("click", () => {
     const size = prompt("Choose a new gridsize", 16);
-    if (size !== null && !isNaN(size) && size > 0) {
+    if (size !== null && !isNaN(size) && size > 0 && size < 100) {
       createGrid(size);
     } else {
       alert("ERROR");
