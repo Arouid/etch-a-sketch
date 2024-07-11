@@ -6,26 +6,16 @@ body {
 * {
   box-sizing: border-box;
 }
-/* main area */
-header {
-  padding: 1rem 2rem 4rem;
-}
 
 .container {
-  display: flexbox;
-  margin: 0 auto;
-  width: 800px;
-  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* flexbox */
 
-.row {
-  display: flex;
-}
 .column {
-  flex: 1;
-  padding: 1rem 0;
   background-color: lightgray;
 }
 /* Animations and board styling */
