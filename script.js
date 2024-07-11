@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (size !== null && !isNaN(size) && size > 0 && size < 100) {
       createGrid(size);
     } else {
-      alert("ERROR");
+      alert("ERROR"); // need to clean this up for better error clarification
     }
   });
 });
